@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title> About Us</title>
+    <style>
+        /* Navbar container */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* CSS Picture */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+#about-team {
+    padding: 50px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.team-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.team-container h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.team-container p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #777;
+}
+
+.team-members {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    width: 250px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.team-member img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.team-member h3 {
+    font-size: 24px;
+    margin-top: 15px;
+    color: #333;
+}
+
+.team-member p {
+    font-size: 16px;
+    color: #777;
+}
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#home"> P STORE </a>
+        <a href="index.html"> <i class="fa fa-home"></i> Home </a>
+        <div class="dropdown">
+          <button class="dropbtn">Service
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="Account.html"> ACCOUNT </a>
+            <a href="Topup.html"> TOP UP </a>
+            <a href="item.html"> ITEM </a>
+          </div>
+        </div>
+        <a href="Contact.html"> CONTACT   </a>
+        <a href="AboutUs.html"> ABOUT US  </a>
+      </div>
+      <section id="about-team">
+        <div class="team-container">
+            <h2>About Us</h2>
+            <p>We are From Group 4 ,and This  is the Information About My Group.</p>
+            <div class="team-members">
+                <!-- Team Member 1 -->
+                <div class="team-member">
+                    <a href="https://t.me/Romastro9"><img src="c:\Users\ASUS\Desktop\HTML - Copy\Member-pic\phearom.png" alt="Rom"></a>
+                    <h3>MOUNG PHEAROM</h3>
+                    <p>Lead Developer</p>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="team-member">
+                    <a href="https://t.me/MengMeng087 "><img src="c:\Users\ASUS\Desktop\HTML - Copy\Member-pic\hangmeng.png" alt="hangmeng.png"></a>
+                    <h3>KHOV HANGMENG</h3>
+                    <p>Project Manager</p>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="team-member">
+                    <a href="https://t.me/voeurn_kimheng_2005"><img src="c:\Users\ASUS\Desktop\HTML - Copy\Member-pic\Kimheng.png" alt="Kimheng"></a>
+                    <h3>VOEURN KIMHENG</h3>
+                    <p>UI/UX Designer</p>
+                </div>
+                <div class="team-member">
+                    <img src="c:\Users\ASUS\Desktop\HTML - Copy\Member-pic\sokha.png" alt="sokha">
+                    <h3>SAMBATH SOKHA</h3>
+                    <p>UI/UX Designer</p>
+                </div>
+                <div class="team-member">
+                    <a href="https://t.me/yousoserskorlany"><img src="c:\Users\ASUS\Desktop\HTML - Copy\Member-pic\Erskorlony.png" alt="Erskorlony"></a>
+                    <h3>YOUSOS ERSKORLONY</h3>
+                    <p>UI/UX Designer</p>
+                </div>
+            </div>
+            <!-- Telegra icon -->
+<div style=" text-decoration: none;background: rgb(42, 171, 238); box-sizing: border-box; display: inline-flex; padding: 10px 14px; justify-content: center; align-items: center; color: rgb(255, 255, 255); cursor: pointer; border-radius: 20px; position: fixed; box-shadow: none; right: 20px; left: auto; bottom: 20px; z-index: 99999;"><svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M18.384,22.779c0.322,0.228 0.737,0.285 1.107,0.145c0.37,-0.141 0.642,-0.457 0.724,-0.84c0.869,-4.084 2.977,-14.421 3.768,-18.136c0.06,-0.28 -0.04,-0.571 -0.26,-0.758c-0.22,-0.187 -0.525,-0.241 -0.797,-0.14c-4.193,1.552 -17.106,6.397 -22.384,8.35c-0.335,0.124 -0.553,0.446 -0.542,0.799c0.012,0.354 0.25,0.661 0.593,0.764c2.367,0.708 5.474,1.693 5.474,1.693c0,0 1.452,4.385 2.209,6.615c0.095,0.28 0.314,0.5 0.603,0.576c0.288,0.075 0.596,-0.004 0.811,-0.207c1.216,-1.148 3.096,-2.923 3.096,-2.923c0,0 3.572,2.619 5.598,4.062Zm-11.01,-8.677l1.679,5.538l0.373,-3.507c0,0 6.487,-5.851 10.185,-9.186c0.108,-0.098 0.123,-0.262 0.033,-0.377c-0.089,-0.115 -0.253,-0.142 -0.376,-0.064c-4.286,2.737 -11.894,7.596 -11.894,7.596Z"></path></svg><span style="margin-left: 8px; font-style: normal; font-size: 14px; font-weight: 600; line-height: 20px;"><a href="https://t.me/Romastro9">Telegram</span></div></a>
+           </div>
+    </section>
+</body>
+</html>

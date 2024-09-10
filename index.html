@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>P-STORE </title>
+  
+  <style>
+
+/* Navbar container */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1550px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+ text-align: center;
+
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+box-sizing: border-box;
+
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+.checked {
+  color: orange;
+}
+
+
+  </style>
+</head>
+
+
+<body>
+  <div class="navbar">
+    <a href="#home" > P STORE </a> 
+    <a href="pstorewebsite.html"> <i class="fa fa-home"> </i> Home </a>
+    <div class="dropdown">
+      <button class="dropbtn"> Service
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="Account.html">ACCOUNT </a>
+        <a href="Topup.html"> TOP UP </a>
+        <a href="item.html"> ITEM </a>
+      </div>
+    </div>
+    <a href="Contact.html">  CONTACT   </a>
+    <a href="AboutUs.html"> ABOUT US  </a>
+
+   
+  </div>
+  
+<div class="slideshow-container">
+
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 3</div>
+    <img src="c:\Users\ASUS\Desktop\HTML - Copy\img\sildeshow\1.svg" style="width:100%">
+    <div class="text">សេវាកម្មលឿនរហ័ស</div>
+    <!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  </div>
+  
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="c:\Users\ASUS\Desktop\HTML - Copy\img\sildeshow\2.svg" style="width:100%">
+    <div class="text">ទំនុកចិត្តនិងសុវត្ថិភាព</div>
+  </div>
+  
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="c:\Users\ASUS\Desktop\HTML - Copy\img\sildeshow\3.svg" style="width:100%">
+    <div class="text">ឈានមុខគេនៅកម្ពុជា</div>
+  </div>
+  
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+  
+  </div>
+  <br>
+  
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span> 
+    <span class="dot" onclick="currentSlide(2)"></span> 
+    <span class="dot" onclick="currentSlide(3)"></span> 
+  </div>
+  
+  <script>
+  let slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+  }
+  </script>
+
+<h2 style="text-align: center;">Our Service</h2>
+<p style="text-align: center;"> Check information Product and Click link Below </p>
+<br>
+
+<!-- CAP CUT PRO  -->
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="c:\Users\ASUS\Desktop\HTML - Copy\img\Product\capcut-image.png" alt="CAP CUT" style="width:100%">
+      <div class="container">
+        <h2>CAP CUT PRO </h2>
+        <p class="title"> Video Editors
+          CapCut Pro 1 Year Official Account</p>
+        <p>✅ Account + Password <BR>
+           ✅ Computer + Phone <BR>
+           ✅ Full Warranty <BR></p>
+        <p>💲price $15.00/Year</p>
+
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        
+        <p><a href="https://t.me/p_store_channel/1693"><button class="button">BUY NOW </button></p></a>
+      </div>
+    </div>
+  </div>
+<!-- CANVA PRO  -->
+  <div class="column">
+    <div class="card">
+      <img src="c:\Users\ASUS\Desktop\HTML - Copy\img\Product\Canva_logo..png" alt="Canva" style="width:100%">
+      <div class="container">
+        <h2>CANVA PRO</h2>
+        <p class="title">create social media posts, presentations, posters, logos </p>
+        <p>✅ Upgrade Own Gmail <BR>
+           ✅ Full Warranty <BR>
+           ✅ Support All Device  <BR>
+          </p>
+        <p>💲price $7.99/Lifetime</p>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+
+        <p><a href="https://t.me/p_store_channel/1693"><button class="button">BUY NOW </button></p></a>
+      </div>
+    </div>
+  </div>
+ <!-- TELEGRAM PREMIUM  -->
+  <div class="column">
+    <div class="card">
+      <img src="c:\Users\ASUS\Desktop\HTML - Copy\img\Product\telegram.png" alt="Telegram" style="width:100%">
+      <div class="container">
+        <h2>TELEGRAM PREMIUM</h2>
+        <p class="title">CHAT AND CONNECTION</p>
+        <p>✅ Upgrade Own Acc <BR>
+          ✅ Full Warranty <BR>
+          ✅ Need Only Username  <BR></p>
+        <p>💲price $27.99/1Year</p>
+
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+
+        <p><a href="https://t.me/p_store_channel/1693"><button class="button">BUY NOW </button></p></a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- NETFLIX PREMIUM -->
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="c:\Users\ASUS\Desktop\HTML - Copy\img\Product\netflix.jpg" style="width:100%">
+      <div class="container">
+        <h2>NETFLIX PREMIUM</h2>
+        <p class="title"> Video Editors
+          CapCut Pro 1 Year Official Account</p>
+        <p>✅ Account + Password <BR>
+           ✅ Computer + Phone <BR>
+           ✅ Full Warranty <BR></p>
+        <p>💲price $15.00/Year</p>
+
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+
+        <p><a href="https://t.me/p_store_channel/1693"><button class="button">BUY NOW </button></p></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Spotify Premium -->
+  <div class="column">
+    <div class="card">
+      <img src="c:\Users\ASUS\Desktop\HTML - Copy\img\Product\Spotify.png" alt="Spotify" style="width:100%">
+      <div class="container">
+        <h2>Spotify Premium</h2>
+        <p class="title">create social media posts, presentations, posters, logos </p>
+        <p>✅ Upgrade Own Gmail <BR>
+           ✅ Full Warranty <BR>
+           ✅ Support All Device  <BR>
+          </p>
+        <p>💲price $7.99/Lifetime</p>
+
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+
+        <p><a href="https://t.me/p_store_channel/1693"><button class="button">BUY NOW </button></p></a>
+      </div>
+    </div>
+  </div>
+  <!-- FLIMORA PRO -->
+  <div class="column">
+    <div class="card">
+      <img src="c:\Users\ASUS\Desktop\HTML - Copy\img\Product\Flimora.png" alt="Filmora" style="width:100%">
+      <div class="container">
+        <h2>FLIMORA PRO</h2>
+        <p class="title">CHAT AND CONNECTION</p>
+        <p>✅ Account + Password <BR>
+          ✅ Computer + Phone <BR>
+          ✅ Full Warranty <BR></p>
+        <p>💲price $27.99/1Year</p>
+
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+
+        <p><a href="https://t.me/p_store_channel/1693"><button class="button">BUY NOW </button></p></a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- YOU TUBE PREMIUM -->
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="c:\Users\ASUS\Desktop\HTML - Copy\img\Product\You Tube.png" alt="You Tube" style="width:100%">
+      <div class="container">
+        <h2>YOU TUBE PREMIUM</h2>
+        <p class="title"> Video Editors
+          CapCut Pro 1 Year Official Account</p>
+        <p>✅ Account + Password <BR>
+           ✅ Computer + Phone <BR>
+           ✅ Full Warranty <BR></p>
+        <p>💲price $15.00/Year</p>
+
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+
+        <p><a href="https://t.me/p_store_channel/1693"><button class="button">BUY NOW </button></p></a>
+      </div>
+    </div>
+  </div>
+  <!-- Motion Array -->
+  <div class="column">
+    <div class="card">
+      <img src="c:\Users\ASUS\Desktop\HTML - Copy\img\Product\Motion-Array-logo.jpg" alt="Motion Array" style="width:100%">
+      <div class="container">
+        <h2>Motion Array</h2>
+        <p class="title">create social media posts, presentations, posters, logos </p>
+        <p>✅ Upgrade Own Gmail <BR>
+           ✅ Full Warranty <BR>
+           ✅ Support All Device  <BR>
+          </p>
+        <p>💲price $7.99/Lifetime</p>
+
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+
+        <p><a href="https://t.me/p_store_channel/1607"><button class="button">BUY NOW </button></p></a>
+      </div>
+    </div>
+  </div>
+  <!--OFFICE 365 -->
+  <div class="column">
+    <div class="card">
+      <img src="c:\Users\ASUS\Desktop\HTML - Copy\img\Product\office3565.png" alt="Office365" style="width:100%">
+      <div class="container">
+        <h2>OFFICE 365</h2>
+        <p class="title">CHAT AND CONNECTION</p>
+        <p>✅ Account + Password <BR>
+          ✅ Computer + Phone <BR>
+          ✅ Full Warranty <BR></p>
+        <p>💲price $27.99/1Year</p>
+
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        
+        <p><a href="https://t.me/p_store_channel/1624"><button class="button">BUY NOW </button></p></a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Telegra icon -->
+<div style=" text-decoration: none;background: rgb(42, 171, 238); box-sizing: border-box; display: inline-flex; padding: 10px 14px; justify-content: center; align-items: center; color: rgb(255, 255, 255); cursor: pointer; border-radius: 20px; position: fixed; box-shadow: none; right: 20px; left: auto; bottom: 20px; z-index: 99999;"><svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M18.384,22.779c0.322,0.228 0.737,0.285 1.107,0.145c0.37,-0.141 0.642,-0.457 0.724,-0.84c0.869,-4.084 2.977,-14.421 3.768,-18.136c0.06,-0.28 -0.04,-0.571 -0.26,-0.758c-0.22,-0.187 -0.525,-0.241 -0.797,-0.14c-4.193,1.552 -17.106,6.397 -22.384,8.35c-0.335,0.124 -0.553,0.446 -0.542,0.799c0.012,0.354 0.25,0.661 0.593,0.764c2.367,0.708 5.474,1.693 5.474,1.693c0,0 1.452,4.385 2.209,6.615c0.095,0.28 0.314,0.5 0.603,0.576c0.288,0.075 0.596,-0.004 0.811,-0.207c1.216,-1.148 3.096,-2.923 3.096,-2.923c0,0 3.572,2.619 5.598,4.062Zm-11.01,-8.677l1.679,5.538l0.373,-3.507c0,0 6.487,-5.851 10.185,-9.186c0.108,-0.098 0.123,-0.262 0.033,-0.377c-0.089,-0.115 -0.253,-0.142 -0.376,-0.064c-4.286,2.737 -11.894,7.596 -11.894,7.596Z"></path></svg><span style="margin-left: 8px; font-style: normal; font-size: 14px; font-weight: 600; line-height: 20px;"><a href="https://t.me/Romastro9">Telegram</span></div></a>
+  </div>
+</body>
+</html>
